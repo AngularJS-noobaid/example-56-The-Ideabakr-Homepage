@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Ideabakr Homepage</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				
+				background-color: rgb(251, 251, 251);
+			}
+
+			input[type=submit]{	
+				background-color: #64ae3c;
+				font-size: 14px;
+				border:none;
+				color:white;	
+				width:60px;
+				height:30px;
+				border-radius:3px;
+			}
+
+			a {
+				display:inline-block;
+				width: 16%;
+				font-size: 25px;
+				text-decoration: none;
+				color: gray;	
+			}
+
+			#copyright {	
+				 color: white;	
+				 width: 100%;
+				 position: fixed;
+   				 bottom: 0;
+	
+			}
+
+			h1, hr, li{
+				color: gray;
+			}
+
+			hr {
+				height: 3px;
+				background-color:gray;
+			}
+
+			.what {
+				width:25%;
+				display:inline-block;
+				color:gray;
+				font-size: 40px, 100%;
+				text-align: left;
+			}
+
+			.leftpane {
+				width: 50%;
+				float: left;
+
+			}
+
+			.rightpane {
+				width: 50%;
+				float: left;	
+			}
+
+			#why {
+				font-size: 40px;
+				color:gray;
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	
+	<body ng-app="myApp" ng-controller="myCtrl">
+	<div style="background-color:rgb(45,91,137)">		
+			<img src="images/logo.png">	
+
+		 	<form>
+  				<input type="text" name="name" placeholder="Name">
+  				<input type="password" name="password" placeholder="Password">
+ 		 		<input type="submit" value="Log In">
+				<input type="submit" value="Sign Up">
+			</form>			
+		</div>
+		
+		<div style="margin: 0 auto; text-align: center">
+			<a href="" ng-repeat="x in sections">{{x}}</a>
+		</div>
+
+		<img src="images/banner-img.jpg" width="100%" height="300px">
+
+		
+
+    		<div style="margin: 0 auto; text-align: center">
+			<h1>How Ideabakr works</h1>
+		</div>
+
+		
+
+
+		<div style="margin: 0 auto; text-align: center">
+			<h1 class="what">Do you have an abandoned project?</h1>
+			<img src="images/blue arrow right down.svg" width="6%" height="80px">	
+			<h1 class="what">Donate it to us</h1>
+			<img src="images/blue arrow right down.svg" width="6%" height="80px">	
+			<h1 class="what">Our users will work on your project</h1>
+		</div>
+	
+		<hr>
+
+		
+		
+    		<div style="margin: 0 auto; text-align: center">
+			<h1>Why Ideabakr?</h1>
+			<div class="leftpane">
+				<img src="images/Question-Mark.png"  width="400px" height="400px">
+			</div>
+			<div class="rightpane">
+				<p id="why" ng-include="'WhyIdeabakr.html'"></p>
+			</div>
+		</div>
+
+		<br style="clear:both" />
+
+		<div style="margin: 0 auto; text-align: center">
+			<h1>As Seen On</h1>
+			<img src="images/partners.jpg"  style="margin-bottom:40px">	
+		</div>
+			
+		<div id="copyright" style="background-color:rgb(45,91,137); margin: 0 auto; text-align: center; color:White ">		
+			<p>Copyright © ideaBAKr. All Rights Reserved.</p>
+		</div>
+
+		<Script> 
+			var app = angular.module('myApp', []);
+
+			app.controller('myCtrl', function($scope) {
+				$scope.sections = [
+					"Home", 
+					"About",
+					"Submit",
+					"Projects",
+					"FAQ", 
+					"Contacts"    				
+				];
+			});
+		</Script>		
+	</body>
+</html>
